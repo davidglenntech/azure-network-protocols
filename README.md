@@ -195,7 +195,7 @@ _Now that we've observed the denial of packets, let's try to allow it again, how
 
 - From Wireshark, search for "dhcp", then ENTER (there should be no activity).
 - From PowerShell, type `ipconfig /renew`, then ENTER.
-  - The virtual machine will briefly lose connection, but will return shortly.
+  - The virtual machine will briefly lose connection but will return shortly.
 - Observe the new activity in Wireshark.
 <p align="center">
 <img src="https://i.imgur.com/s3OoQOI.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
