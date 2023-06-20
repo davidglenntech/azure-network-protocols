@@ -42,22 +42,22 @@ _<b>NOTE:</b> This demonstration uses materials created in the previous demonstr
 <img src="https://i.imgur.com/tiC5aA4.jpg" height="80%" width="80%" alt="Step 1-1"/>
 </p>
 
-- Name your Virtual Machine anyway you want (this example uses **VM1**).
+- Name your Virtual Machine any way you want (this example uses **VM1**).
   - Resource Group is automatically given a name when naming the Virtual Machine, but you can change it if you wish (this example uses **VM1_group**).
-- Change the Region that best suites your location (this example uses **(US) West US 3**).
+- Change the Region that best suits your location (this example uses **(US) West US 3**).
 - Change the Image to a Windows OS (this example uses **Windows 10 Pro, version 22H2 - x64 Gen2**).
 - Make sure the Size is adequate enough to run this server (this example uses **Standard_E2s_v3 - 2 vcpus, 16 GiB memory**).
 - Create a username and password of your choice (this example uses **winuser**).
 - Skip everything else and click "Review + create".
-  - IF there is a Licensing Checkbox at the end, make sure that is CHECKED!
-- If Validation passed, click "Create".
+  - IF there is a Licensing Checkbox at the end, make sure that it is CHECKED!
+- If Validation passes, click "Create".
 <p align="center">
 <img src="https://i.imgur.com/JnsNUpw.jpg" height="100%" width="100%" alt="Step 1-2"/>
 </p>
 
-_Essentially repeat the same steps from creating the other virtual machine, but using Ubuntu (linux):_
+_Essentially repeat the same steps from creating the other virtual machine, but using Ubuntu (Linux):_
 - Set the Resource Group to the same as VM1 (this example uses **VM1_group**).
-- Name your Virtual Machine anyway you want (this example uses **VM2**).
+- Name your Virtual Machine any way you want (this example uses **VM2**).
 - Change Image to Ubuntu Linux (this example uses **Ubuntu Server 20.04 LTS - x64 Gen2**)
 - Keep the size the same as the Windows VM (this example uses **Standard_E2s_v3 - 2 vcpus, 16 GiB memory**).
 - Change the Authentication type to "Password", and create any username (this example uses the username **linuser**).
@@ -69,7 +69,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 - Make sure that the Virtual Network is set as the same as Windows VM (this example uses **VM1-vnet**).
 - Set the Public IP to whatever it has automatically assigned to (you might have to confirm the selection).
 - Then press "Review + create".
-- If Validation passed, click "Create".
+- If Validation passes, click "Create".
 <p align="center">
 <img src="https://i.imgur.com/snw2Byu.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
@@ -88,7 +88,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 </p>
 
 - On VM1, open Microsoft Edge (or any internet browser), then go to the Wireshark download page.
-  - You can simply Google Search it, or copy the link shown.
+  - You can simply Google Search it or copy the link shown.
 - Click on "Windows Intel Installer" to start downloading the executable.
 - Once downloaded, click "Open file" to run the .exe file (you can also find this inside your Downloads folder within Windows Explorer)
 <p align="center">
@@ -97,7 +97,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 
 - The installation prompt will appear, hit "Next".
 - When the installation prompt appears, leave everything by default and keep pressing "Next" until you start Installing.
-- If any agreement prompts appear during installation, just agree to them and click install (without checkmarking anything).
+- If any agreement prompts appear during installation, just agree to them and click install (without check marking anything).
 - After all installations are complete, click "Finish".
 <p align="center">
 <img src="https://i.imgur.com/kZJSHgb.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
@@ -123,7 +123,7 @@ _Essentially repeat the same steps from creating the other virtual machine, but 
 _Note: The 'ping' tool within Command Prompt (cmd) / PowerShell uses protocol ICMPv4._
 - Minimize the virtual machine to the Azure Portal.
 - Go to VM2's Overview page and copy the PRIVATE IP address (this example uses **10.0.0.5**).
-- Return to VM2, press the Windows Key/Button and seach for "CMD" or "PowerShell".
+- Return to VM2, press the Windows Key/Button and search for "CMD" or "PowerShell".
 - Type in `ping -t <Private IP address>` (this example would use command **ping -t 10.0.0.5**).
   - On Wireshark, you should be able to see the results of packets being perpetually sent and received.
 <p align="center">
@@ -155,7 +155,7 @@ _While that is infinitely pinging, we'll try to deny those packets and observe w
 <img src="https://i.imgur.com/bCN1O9d.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 
-_Now that we've observed the denial of packets, let's try allow it again, however, instead of deleting the added rule, we can simply edit the Action to "Allow"._
+_Now that we've observed the denial of packets, let's try to allow it again, however, instead of deleting the added rule, we can simply edit the Action to "Allow"._
 <p align="center">
 <img src="https://i.imgur.com/Mzxx3Pk.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/oIGcjGU.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
@@ -184,7 +184,7 @@ _Now that we've observed the denial of packets, let's try allow it again, howeve
 </p>
 
 - Now accessed to VM2, from PowerShell, type "id", then ENTER.
-  - This will give you the indentity group information for VM2's user.
+  - This will give you the identity group information for VM2's user.
 - Observe the new traffic on Wireshark.
 - Type in "exit" to close the linked connection and return to VM1's control.
 <p align="center">
@@ -205,7 +205,7 @@ _Next to observe DNS traffic activity:_
 - From Wireshark, search for "dns", then ENTER (there should be a lot of traffic).
   - A more direct way is typing "udp.port == 53".
 - Clear the boxes by pressing the "Restart current capture" button (green shark fin).
-- From PowerShell, type `nslookup www.google.com`, observe the new activity in Wireshark.
+- From PowerShell, type `nslookup www.google.com`, and observe the new activity in Wireshark.
 <p align="center">
 <img src="https://i.imgur.com/sKPc1ap.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/xvQtTBC.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
@@ -224,7 +224,7 @@ _Because we are currently using RDP to run the virtual machine, anything and eve
 
 - From PowerShell, type `ipconfig /displaydns`, the ENTER.
   - _You should see many domain names to other websites with information below them._
-  - _The saved data here allows your system to remember information a website that was already visited without and have access to it without making requesting for new info._
+  - _The saved data here allows your system to remember information about a website that was already visited and have access to it without making requests for new info._
 <p align="center">
 <img src="https://i.imgur.com/dLrnksv.jpg" height="100%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
